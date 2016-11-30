@@ -15,6 +15,7 @@
 		449143931DE3EB3400EE4C4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449143911DE3EB3400EE4C4F /* LaunchScreen.storyboard */; };
 		4491439E1DE3EB3400EE4C4F /* TopPushViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4491439D1DE3EB3400EE4C4F /* TopPushViewDemoTests.m */; };
 		449143A91DE3EB3400EE4C4F /* TopPushViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 449143A81DE3EB3400EE4C4F /* TopPushViewDemoUITests.m */; };
+		449143B81DE41D4C00EE4C4F /* RexPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 449143B71DE41D4C00EE4C4F /* RexPopView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		449143A41DE3EB3400EE4C4F /* TopPushViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopPushViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		449143A81DE3EB3400EE4C4F /* TopPushViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopPushViewDemoUITests.m; sourceTree = "<group>"; };
 		449143AA1DE3EB3400EE4C4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		449143B61DE41D4C00EE4C4F /* RexPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RexPopView.h; sourceTree = "<group>"; };
+		449143B71DE41D4C00EE4C4F /* RexPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RexPopView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				449143871DE3EB3400EE4C4F /* AppDelegate.m */,
 				449143891DE3EB3400EE4C4F /* ViewController.h */,
 				4491438A1DE3EB3400EE4C4F /* ViewController.m */,
+				449143B61DE41D4C00EE4C4F /* RexPopView.h */,
+				449143B71DE41D4C00EE4C4F /* RexPopView.m */,
 				4491438C1DE3EB3400EE4C4F /* Main.storyboard */,
 				4491438F1DE3EB3400EE4C4F /* Assets.xcassets */,
 				449143911DE3EB3400EE4C4F /* LaunchScreen.storyboard */,
@@ -207,6 +212,7 @@
 				TargetAttributes = {
 					4491437F1DE3EB3400EE4C4F = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = KB5L23C33F;
 						ProvisioningStyle = Automatic;
 					};
 					449143981DE3EB3400EE4C4F = {
@@ -273,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449143B81DE41D4C00EE4C4F /* RexPopView.m in Sources */,
 				4491438B1DE3EB3400EE4C4F /* ViewController.m in Sources */,
 				449143881DE3EB3400EE4C4F /* AppDelegate.m in Sources */,
 				449143851DE3EB3400EE4C4F /* main.m in Sources */,
@@ -424,10 +431,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KB5L23C33F;
 				INFOPLIST_FILE = TopPushViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JJS.TopPushViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -435,6 +446,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KB5L23C33F;
 				INFOPLIST_FILE = TopPushViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JJS.TopPushViewDemo;
@@ -507,6 +520,7 @@
 				449143AF1DE3EB3400EE4C4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		449143B01DE3EB3400EE4C4F /* Build configuration list for PBXNativeTarget "TopPushViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +529,7 @@
 				449143B21DE3EB3400EE4C4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		449143B31DE3EB3400EE4C4F /* Build configuration list for PBXNativeTarget "TopPushViewDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +538,7 @@
 				449143B51DE3EB3400EE4C4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
