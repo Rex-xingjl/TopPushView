@@ -146,6 +146,7 @@
     [UIView animateWithDuration:self.popView_animate_duration_show animations:^{
         [RexPopView shared].frame = self.popView_frame_show;
         _isAnimating_show = YES;
+        _rex_panGesture.enabled = YES;
     } completion:^(BOOL finished) {
         [self.rex_timer fire];
     }];
@@ -157,7 +158,8 @@
     }
     [UIView animateWithDuration:self.popView_animate_duration_hide animations:^{
         _isAnimating_hide = YES;
-        self.frame = self.popView_frame_hide;
+        _rex_panGesture.enabled = NO;
+        [RexPopView shared].frame = self.popView_frame_hide;
         [RexPopView shared].alpha = r_zero_float;
         [RexPopView shared].transform = CGAffineTransformMakeScale(self.popView_transform_scale,
                                                                    self.popView_transform_scale);
@@ -165,7 +167,6 @@
         [RexPopView shared].alpha = r_one;
         [RexPopView shared].transform = CGAffineTransformIdentity;
         [self rex_timerInvalidate];
-        
         _isAnimating_show = NO;
         _isAnimating_hide = NO;
         _entryButton.enabled = YES;
@@ -190,7 +191,6 @@
     
     // motion executed
     if (pan.state == UIGestureRecognizerStateEnded) {
-        
         if (lastY > - popSize.height / r_two && lastY < r_screen_height / r_two) {
             [UIView animateWithDuration:self.popView_animate_duration_show animations:^{
                 [self rex_timerValidate];
@@ -403,8 +403,8 @@
     if (self.rex_btnblock) {
         self.rex_btnblock();
     }
-    [self popViewHide];
     button.enabled = NO;
+    [self popViewHide];
 }
 
 - (CGRect)entryButton_frame {
