@@ -67,7 +67,7 @@
 @property (atomic, assign) __block BOOL isAnimating_show;
 @property (atomic, assign) __block BOOL isAnimating_hide;
 @property (nonatomic, strong) UIPanGestureRecognizer * rex_panGesture;
-@property (nonatomic, weak)   RexPopViewButtonBlock rex_btnblock;
+@property (nonatomic, strong) RexPopViewButtonBlock rex_btnblock;
 @property (nonatomic, strong) NSTimer * rex_timer;
 @property (nonatomic, assign) int rex_second;
 
