@@ -43,7 +43,7 @@
 
 - (IBAction)HideBtnAction:(id)sender {
     
-    [RexPopView dimiss];
+    [RexPopView dismiss];
 //    [RexPopView showInfo:@"报备失败，谢谢光临。" btnTitle:@"查看客户" btnAction:^{
 //        NSLog(@"你说说打印不打印呗");
 //    }];

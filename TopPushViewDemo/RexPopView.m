@@ -83,7 +83,7 @@
     [[RexPopView shared] showPopViewWith:info btnTitle:title btnAction:block];
 }
 
-+ (void)dimiss {
++ (void)dismiss {
     [[RexPopView shared] popViewHide];
 }
 

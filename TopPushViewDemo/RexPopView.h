@@ -32,7 +32,7 @@ typedef void(^RexPopViewButtonBlock)();
  *
  *  隐藏视图
  */
-+ (void)dimiss;
++ (void)dismiss;
 
 
 #pragma mark - # Options Method #
