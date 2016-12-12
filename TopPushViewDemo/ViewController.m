@@ -35,7 +35,7 @@
 //    [RexPopView shared].popView_frame = CGRectMake(0, -100, 200, 150);
 //    [RexPopView showInfo:@"经纪人桑达棕榈堡分行-尹邦英 报备客户陈佳文-【中海锦城】，请及时接待确认。" btnTitle:@"查看客户"];
 //    [RexPopView shared].popView_view_duration = 0;
-    [RexPopView showInfo:@"经纪人桑达棕榈堡分行-尹邦英 报备客户陈佳文-【中海锦城】，请及时接待确认。" btnTitle:@"查看客户" btnAction:^{
+    [RexPopView showInfo:@"经纪人桑达棕榈堡分行-尹邦英 报备客户Rex-【中海锦城】，请及时接待确认。" btnTitle:@"查看客户" btnAction:^{
           NSLog(@"你说说打印不打印呗");
     }];
 //    @"经纪人桑达棕榈堡分行-尹邦英 报备客户陈佳文-【中海锦城】，请及时接待确认。"

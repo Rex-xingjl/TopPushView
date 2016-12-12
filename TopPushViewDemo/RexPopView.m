@@ -1,9 +1,9 @@
 //
-//  RexPopView.m
-//  TopPushViewDemo
+//  RexPopView
 //
-//  Created by Rex@JJS on 2016/11/22.
-//  Copyright © 2016年 Rex@JJSRex. All rights reserved.
+//
+//  Created by Rex on 2016/11/22.
+//  Copyright © 2016年 Rex All rights reserved.
 //
 
 #import "RexPopView.h"
