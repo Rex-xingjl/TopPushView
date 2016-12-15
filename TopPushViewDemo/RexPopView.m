@@ -67,6 +67,7 @@
 @property (atomic, assign) __block BOOL isAnimating_show;
 @property (atomic, assign) __block BOOL isAnimating_hide;
 @property (nonatomic, strong) UIPanGestureRecognizer * rex_panGesture;
+@property (nonatomic, strong) UITapGestureRecognizer * rex_tapGesture;
 @property (nonatomic, strong) RexPopViewButtonBlock rex_btnblock;
 @property (nonatomic, strong) NSTimer * rex_timer;
 @property (nonatomic, assign) int rex_second;
@@ -117,6 +118,7 @@
     [self addSubview:self.clockLabel];
     [self addSubview:self.clockImageView];
     [self addGestureRecognizer:self.rex_panGesture];
+    [self addGestureRecognizer:self.rex_tapGesture];
     [self.layer setMasksToBounds:YES];
     [self setClipsToBounds:YES];
 }
@@ -143,6 +145,7 @@
     if (_isAnimating_show) {
         return;
     }
+    [RexPopView shared].hidden = NO;
     [UIView animateWithDuration:self.popView_animate_duration_show animations:^{
         [RexPopView shared].frame = self.popView_frame_show;
         _isAnimating_show = YES;
@@ -164,18 +167,20 @@
         [RexPopView shared].transform = CGAffineTransformMakeScale(self.popView_transform_scale,
                                                                    self.popView_transform_scale);
     } completion:^(BOOL finished) {
+        [RexPopView shared].hidden = YES;
         [RexPopView shared].alpha = r_one;
         [RexPopView shared].transform = CGAffineTransformIdentity;
         [self rex_timerInvalidate];
         _isAnimating_show = NO;
         _isAnimating_hide = NO;
         _entryButton.enabled = YES;
+        _rex_tapGesture.enabled = YES;
     }];
 }
 
 - (void)rex_panGestureAction:(UIPanGestureRecognizer *)pan {
     static CGRect movingFrame;
-    
+
     CGFloat lastY = [pan translationInView:self].y;  // final Y
     CGSize  popSize = self.popView_frame.size;
     
@@ -227,6 +232,13 @@
         self.rex_panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(rex_panGestureAction:)];
     }
     return _rex_panGesture;
+}
+
+- (UITapGestureRecognizer *)rex_tapGesture {
+    if (!_rex_tapGesture) {
+        self.rex_tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(entryGetureAction:)];
+    }
+    return _rex_tapGesture;
 }
 
 - (NSTimer *)rex_timer {
@@ -404,6 +416,16 @@
         self.rex_btnblock();
     }
     button.enabled = NO;
+    self.rex_tapGesture.enabled = NO;
+    [self popViewHide];
+}
+
+- (void)entryGetureAction:(UITapGestureRecognizer *)tap {
+    if (self.rex_btnblock) {
+        self.rex_btnblock();
+    }
+    tap.enabled = NO;
+    self.entryButton.enabled = NO;
     [self popViewHide];
 }
 
