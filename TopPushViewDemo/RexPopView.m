@@ -37,7 +37,7 @@
 #define r_lbl_bg_color    ([UIColor clearColor])
 #define r_lbl_text_color  ([UIColor whiteColor])
 #define r_lbl_font        ([UIFont systemFontOfSize:14.f])
-#define r_lbl_height      (r_pop_height - 3*r_edge_vertical)
+#define r_lbl_height      (r_pop_height - 2*r_edge_vertical)
 #define r_lbl_width       (r_screen_width - 3*r_edge_horizontal - r_btn_width)
 
 #define r_btn_font        ([UIFont systemFontOfSize:14.f])
@@ -97,7 +97,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
-        instance.windowLevel = UIWindowLevelStatusBar + 1.0f;
+        instance.windowLevel = UIWindowLevelStatusBar + r_one;
     });
     return instance;
 }
