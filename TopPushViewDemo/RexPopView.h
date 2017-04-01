@@ -10,7 +10,7 @@
 
 typedef void(^RexPopViewButtonBlock)();
 
-@interface RexPopView : UIView
+@interface RexPopView : UIWindow
 
 #pragma //////////////////////////////////////////////////////////////////////////
 

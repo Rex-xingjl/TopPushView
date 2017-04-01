@@ -30,7 +30,7 @@
 #define r_pop_v_duration  3.0f
 #define r_pop_height      84.f
 
-#define r_btm_alpha       0.8f
+#define r_btm_alpha       0.9f
 #define r_btm_color       ([UIColor blackColor])
 
 #define r_lbl_info        @"无消息内容"
@@ -55,11 +55,11 @@
 #define r_clk_text_init   ([NSString stringWithFormat:@"%d", (int)_popView_view_duration])
 
 #define r_img_frame       (CGRectMake(CGRectGetMinX(self.clockLabel.frame)-5-12, CGRectGetMinY(self.clockLabel.frame), 12, 12))
-#define r_clk_frame       (CGRectMake(CGRectGetMaxX(self.entryButton.frame)-10, CGRectGetMinY(self.entryButton.frame)-18, 10, 12))
+#define r_clk_frame       (CGRectMake(CGRectGetMaxX(self.entryButton.frame)-10, CGRectGetMinY(self.entryButton.frame)-25, 10, 12))
 #define r_pop_frame_show  (CGRectMake(r_zero_float, r_zero_float, r_screen_width, r_pop_height))
 #define r_pop_frame_hide  (CGRectMake(r_zero_float, - r_pop_height, r_screen_width, r_pop_height))
 #define r_btm_frame       r_pop_frame_show
-#define r_lbl_frame       ((CGRect){r_edge_horizontal, 2 *r_edge_vertical, r_lbl_width, r_lbl_height})
+#define r_lbl_frame       ((CGRect){r_edge_horizontal, r_edge_vertical, r_lbl_width, r_lbl_height})
 #define r_btn_frame       ((CGRect){CGRectGetMaxX(_infoLabel.frame)+r_edge_horizontal, r_btn_top, r_btn_width, r_btn_height})
 
 @interface RexPopView()
@@ -97,7 +97,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
-        [[UIApplication sharedApplication].keyWindow addSubview:instance];
+        instance.windowLevel = UIWindowLevelStatusBar + 1.0f;
     });
     return instance;
 }
