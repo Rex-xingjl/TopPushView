@@ -44,5 +44,5 @@ All the parameters is open to change
 
 ![chestnut](chestnut.gif "chestnut")
 
-### Luxuriant line
-————————
+Luxuriant line
+______________
