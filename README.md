@@ -1,7 +1,7 @@
 # TopPushView
 
 
-A push View like the ios 9&before style
+A push View like the ios 9&before style.
 
 >Show
 
@@ -31,7 +31,7 @@ A push View like the ios 9&before style
 
 >Custom
 
-All the parameters is open to change
+All the parameters is open to change.
 
 ```objc
 
@@ -40,7 +40,8 @@ All the parameters is open to change
     [RexPopView shared].popView_view_duration = 4;
 ```
 
-### Take a chestnut View
+Take a chestnut View
+====================
 
 ![chestnut](chestnut.gif "chestnut")
 
