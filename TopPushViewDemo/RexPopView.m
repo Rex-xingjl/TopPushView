@@ -52,7 +52,7 @@
 #define r_clk_text_color  ([UIColor whiteColor])
 #define r_clk_font        ([UIFont systemFontOfSize:12.f])
 #define r_clk_text_count  ([NSString stringWithFormat:@"%d", (int)(self.popView_view_duration+1 - self.rex_second)])
-#define r_clk_text_init   ([NSString stringWithFormat:@"%d", (int)_popView_view_duration])
+#define r_clk_text_init   ([NSString stringWithFormat:@"%d", (int)(self.popView_view_duration)])
 
 #define r_img_frame       (CGRectMake(CGRectGetMinX(self.clockLabel.frame)-5-12, CGRectGetMinY(self.clockLabel.frame), 12, 12))
 #define r_clk_frame       (CGRectMake(CGRectGetMaxX(self.entryButton.frame)-10, CGRectGetMinY(self.entryButton.frame)-25, 10, 12))
@@ -135,6 +135,7 @@
     [self infoLabel];
     [self entryButton];
     [self popViewShow];
+    [self clockLabel];
 }
 
 #pragma ///////////////////////////////////////////////////////////////////////////////
@@ -498,11 +499,12 @@
 - (UILabel *)clockLabel {
     if (!_clockLabel) {
         self.clockLabel = [[UILabel alloc] initWithFrame:r_clk_frame];
-        _clockLabel.textColor = self.clockLabel_textColor;
-        _clockLabel.textAlignment = NSTextAlignmentCenter;
-        _clockLabel.font = self.clockLabel_font;
-        _clockLabel.text = r_clk_text_init;
     }
+    _clockLabel.textColor = self.clockLabel_textColor;
+    _clockLabel.textAlignment = NSTextAlignmentCenter;
+    _clockLabel.font = self.clockLabel_font;
+    _clockLabel.text = [NSString stringWithFormat:@"%g", self.popView_view_duration];
+    _clockLabel.adjustsFontSizeToFitWidth = YES;
     return _clockLabel;
 }
 
