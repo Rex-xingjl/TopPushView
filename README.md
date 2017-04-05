@@ -38,9 +38,11 @@ All the parameters is open to change
     //Example
     [RexPopView shared].bottomView_color = [UIColor blueColor];
     [RexPopView shared].popView_view_duration = 4;
-    
 ```
 
 ### Take a chestnut View
 
 ![chestnut](chestnut.gif "chestnut")
+
+### Luxuriant line
+————————
