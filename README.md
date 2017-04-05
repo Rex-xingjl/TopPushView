@@ -15,6 +15,8 @@ A push View like the ios 9&before style
 
 *Easy to show the PopView and catch the action of touch.*
 
+
+
 >Hide
 
 ```objc
@@ -26,6 +28,8 @@ A push View like the ios 9&before style
 ```
 
 *Anytime to hide the PopView.*
+
+
 
 >Custom
 
@@ -39,6 +43,6 @@ All the parameters is open to change
     
 ```
 
-###Take a chestnut View
+### Take a chestnut View
 
 ![chestnut](chestnut.gif "chestnut")
