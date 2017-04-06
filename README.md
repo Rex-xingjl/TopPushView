@@ -31,7 +31,7 @@ A push View like the ios 9&before style.
 
 >Custom
 
-All the parameters is open to change.
+All the parameters are open to change.
 
 ```objc
 
